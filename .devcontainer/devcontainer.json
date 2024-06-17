@@ -1,0 +1,29 @@
+{
+    "name": "kotlin",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-boot-dev-pack",
+                "fwcd.kotlin",
+                "mathiasfrohlich.Kotlin",
+                "mhutchie.git-graph",
+                "donjayamanne.githistory",
+                "eamodio.gitlens"
+            ],
+            "settings": {
+                "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+                "kotlin.compiler.jvmTarget": "17"
+            }
+        }
+    },
+    "workspaceFolder": "/app",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/git/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/git/.gitconfig,target=/root/.ssh,type=bind,consistency=cached"
+    ]
+}
