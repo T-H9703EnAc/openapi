@@ -42,3 +42,9 @@ Jar
 Spring Boot DevTools
 Spring Web
 ```
+
+## OpenAPI
+
+https://springdoc.org/
+
+https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-gradle-plugin

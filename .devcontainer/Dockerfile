@@ -25,11 +25,22 @@ RUN set -eux && \
     # 解凍ツール
     unzip \
     # 圧縮アーカイブツール
-    tar && \  
+    tar \  
+    # ファイル間の差分を表示するためのツール
+    diffutils \
+    # ファイルやディレクトリを検索するためのツール
+    findutils \
+    # ファイルを圧縮・解凍するためのツール
+    gzip \
+    # コマンドラインで使用するGitリポジトリビューア
+    tig \
+    # コマンドの実行ファイルの場所を表示するためのツール
+    which && \ 
     # APTキャッシュのクリーンアップ
     apt-get clean && \
     # APTリポジトリのメタデータを削除してディスクスペースを節約
     rm -rf /var/lib/apt/lists/*
+
 
 
 
@@ -82,3 +93,7 @@ ENV KOTLIN_HOME=/opt/kotlin/kotlin-compiler-${KOTLIN_VERSION}
 ENV PATH="${KOTLIN_HOME}/bin:${PATH}"
 
 WORKDIR /app
+
+ENV LANG=C.UTF-8
+
+ENV DEVCONTAINER=true

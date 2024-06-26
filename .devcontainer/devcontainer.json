@@ -24,6 +24,7 @@
     "mounts": [
         "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.devcontainer/git/.ssh,target=/root/.ssh,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/.devcontainer/git/.gitconfig,target=/root/.ssh,type=bind,consistency=cached"
-    ]
+        "source=${localWorkspaceFolder}/.devcontainer/git/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "mkdir -p /root/.ssh"  // .sshディレクトリの作成を保証する
 }
