@@ -48,3 +48,5 @@ Spring Web
 https://springdoc.org/
 
 https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-gradle-plugin
+
+https://spec.openapis.org/oas/latest.html

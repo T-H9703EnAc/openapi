@@ -1,0 +1,17 @@
+openapi: 3.1.0
+info:
+  title: Sample API
+  description: API description
+  version: 1.0.0
+paths:
+  /hello:
+    get:
+      summary: Returns a greeting message
+      operationId: sayHello
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
