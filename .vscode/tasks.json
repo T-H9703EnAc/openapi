@@ -1,0 +1,59 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gradle build",
+            "type": "shell",
+            "command": "cd app && ./gradlew build",
+            "detail": "プロジェクトをビルドします"
+        },
+        {
+            "label": "gradle clean",
+            "type": "shell",
+            "command": "cd app && ./gradlew clean",
+            "detail": "ビルドディレクトリをクリーンします"
+        },
+        {
+            "label": "gradle bootRun",
+            "type": "shell",
+            "command": "cd app && ./gradlew bootRun",
+            "detail": "Spring Bootアプリケーションを実行します"
+        },
+        {
+            "label": "gradle test",
+            "type": "shell",
+            "command": "cd app && ./gradlew test",
+            "detail": "テストを実行します"
+        },
+        {
+            "label": "gradle build (detailed)",
+            "type": "shell",
+            "command": "cd app && ./gradlew build",
+            "args": ["--info"],
+            "detail": "プロジェクトをビルドし、詳細なログを出力します"
+        },
+        {
+            "label": "gradle clean (refresh dependencies)",
+            "type": "shell",
+            "command": "cd app && ./gradlew clean",
+            "args": ["--refresh-dependencies"],
+            "detail": "ビルドディレクトリをクリーンし、依存関係を更新します"
+        },
+        {
+            "label": "gradle bootRun (debug mode)",
+            "type": "shell",
+            "command": "cd app && ./gradlew bootRun",
+            "args": ["--debug-jvm"],
+            "detail": "Spring BootアプリケーションをJVMデバッグオプション付きで実行します"
+        },
+        {
+            "label": "gradle test (detailed)",
+            "type": "shell",
+            "command": "cd app && ./gradlew test",
+            "args": ["--info"],
+            "detail": "テストを実行し、詳細なログを出力します"
+        }
+    ]
+}
