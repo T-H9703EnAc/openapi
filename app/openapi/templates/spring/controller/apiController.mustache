@@ -1,0 +1,21 @@
+package {{package}};
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+@RestController
+@RequestMapping("${api.base-path:}")
+public class {{classname}} {
+
+    {{#operations}}
+    {{#operation}}
+    @{{httpMethodMapping}}("{{path}}")
+    public ResponseEntity<String> {{operationId}}({{#hasRequestBody}}@Valid @RequestBody {{requestBodyType}} requestBody{{/hasRequestBody}}) {
+        return new ResponseEntity<>("Not Implemented", HttpStatus.NOT_IMPLEMENTED);
+    }
+    {{/operation}}
+    {{/operations}}
+}

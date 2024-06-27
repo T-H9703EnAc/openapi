@@ -45,11 +45,27 @@ tasks.named<Test>("test") {
 }
 
 openApiGenerate {
+    // 使用するジェネレーターを指定します。この場合、「kotlin-spring」を使用して、KotlinとSpringに適したコードを生成します。
     generatorName.set("kotlin-spring")
+
+    // OpenAPI仕様ファイルのパスを指定します。$projectDirはプロジェクトのルートディレクトリを指し、openapi/openapi.yamlファイルを指定しています。
     inputSpec.set("$projectDir/openapi/openapi.yaml")
+
+    // 生成されたコードの出力ディレクトリを指定します。$buildDirはビルドディレクトリを指し、generatedフォルダに出力されます。
     outputDir.set("$buildDir/generated")
+
+    // 生成されたAPIコードのパッケージ名を指定します。ここではcom.app.apiパッケージに生成されます。
     apiPackage.set("com.app.api")
+
+    // 生成されたインボーカーコード（APIリクエストを行うコード）のパッケージ名を指定します。ここではcom.app.invokerパッケージに生成されます。
     invokerPackage.set("com.app.invoker")
+
+    // 生成されたモデルクラスのパッケージ名を指定します。ここではcom.app.modelパッケージに生成されます。
     modelPackage.set("com.app.model")
+
+    // 追加の設定オプションを指定します。ここでは、日付ライブラリに「java8」を使用するように設定しています。
     configOptions.put("dateLibrary", "java8")
+
+    // カスタムテンプレートのディレクトリを指定
+    templateDir.set("$projectDir/openapi/templates")
 }

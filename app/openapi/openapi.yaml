@@ -1,16 +1,51 @@
 openapi: 3.1.0
 info:
   title: Sample API
-  description: API description
+  description: APIの説明
   version: 1.0.0
 paths:
+# ここから新しいエンドポイントの定義
   /hello:
     get:
-      summary: Returns a greeting message
+      summary: 挨拶メッセージを返します
       operationId: sayHello
       responses:
         '200':
-          description: Successful response
+          description: 成功したレスポンス
+          content:
+            application/json:
+              schema:
+                type: string
+# ここから新しいエンドポイントの定義
+  /goodbye:
+    post:
+      summary: さようならメッセージを送信します
+      operationId: sayGoodbye
+      requestBody:
+        description: さようならを言う相手の名前
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '200':
+          description: 成功したレスポンス
+          content:
+            application/json:
+              schema:
+                type: string
+# ここから新しいエンドポイントの定義
+  /newendpoint:
+    get:
+      summary: 新しいエンドポイントのサンプル
+      operationId: getNewEndpoint
+      responses:
+        '200':
+          description: 成功したレスポンス
           content:
             application/json:
               schema:

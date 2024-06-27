@@ -54,6 +54,18 @@
             "command": "cd app && ./gradlew test",
             "args": ["--info"],
             "detail": "テストを実行し、詳細なログを出力します"
+        },
+        {
+            "label": "openapi generate",
+            "type": "shell",
+            "command": "cd app && ./gradlew openApiGenerate",
+            "detail": "OpenAPI仕様からコードを自動生成します"
+        },
+        {
+            "label": "openapi generate(detailed)",
+            "type": "shell",
+            "command": "cd app && ./gradlew openApiGenerate --info",
+            "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します"
         }
     ]
 }
