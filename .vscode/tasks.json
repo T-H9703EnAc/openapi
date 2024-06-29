@@ -30,15 +30,13 @@
         {
             "label": "gradle build (detailed)",
             "type": "shell",
-            "command": "cd app && ./gradlew build",
-            "args": ["--info"],
+            "command": "cd app && ./gradlew build --info",
             "detail": "プロジェクトをビルドし、詳細なログを出力します"
         },
         {
             "label": "gradle clean (refresh dependencies)",
             "type": "shell",
-            "command": "cd app && ./gradlew clean",
-            "args": ["--refresh-dependencies"],
+            "command": "cd app && ./gradlew clean --refresh-dependencies",
             "detail": "ビルドディレクトリをクリーンし、依存関係を更新します"
         },
         {
@@ -51,8 +49,7 @@
         {
             "label": "gradle test (detailed)",
             "type": "shell",
-            "command": "cd app && ./gradlew test",
-            "args": ["--info"],
+            "command": "cd app && ./gradlew test --info",
             "detail": "テストを実行し、詳細なログを出力します"
         },
         {
@@ -66,6 +63,25 @@
             "type": "shell",
             "command": "cd app && ./gradlew openApiGenerate --info",
             "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します"
+        },
+        {
+            "label": "openapi createTemplates",
+            "type": "shell",
+            "command": "java -jar /usr/local/bin/openapi-generator-cli.jar author template -g kotlin-spring -o /app/app/src/main/resources/templates",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを作成します"
+        },
+        {
+            "label": "openapi createTemplates",
+            "type": "shell",
+            "command": "cd app && ./gradlew createTemplates --stacktrace",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを作成します"
+        },
+        {
+            "label": "openapi deleteTemplates",
+            "type": "shell",
+            "command": "rm -rf /app/app/src/main/resources/templates/*",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを削除します"
         }
+
     ]
 }

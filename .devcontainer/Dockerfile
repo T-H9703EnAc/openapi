@@ -92,6 +92,13 @@ RUN set -eux && \
 ENV KOTLIN_HOME=/opt/kotlin/kotlin-compiler-${KOTLIN_VERSION}
 ENV PATH="${KOTLIN_HOME}/bin:${PATH}"
 
+# OpenAPI Generator CLIのダウンロードとインストール
+ARG OPENAPI_GENERATOR_VERSION=7.6.0
+
+RUN set -eux && \
+    curl -L -o /usr/local/bin/openapi-generator-cli.jar https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/${OPENAPI_GENERATOR_VERSION}/openapi-generator-cli-${OPENAPI_GENERATOR_VERSION}.jar
+
+
 WORKDIR /app
 
 ENV LANG=C.UTF-8
