@@ -1,0 +1,18 @@
+package {{apiPackage}};
+
+import org.springframework.web.bind.annotation.*;
+
+{{#operations}}
+@RestController
+@RequestMapping("{{basePath}}")
+class {{classname}} {
+
+    {{#operation}}
+    @{{httpMethod}}Mapping("{{path}}")
+    fun {{operationId}}({{#parameters}}{{paramType}} {{paramName}}{{^last}}, {{/last}}{{/parameters}}): {{returnType}} {
+        // TODO: implement this method
+        return {{defaultReturn}}
+    }
+    {{/operation}}
+}
+{{/operations}}

@@ -65,16 +65,34 @@
             "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します"
         },
         {
+            "label": "openapi generate(stacktrace)",
+            "type": "shell",
+            "command": "cd app && ./gradlew openApiGenerate --stacktrace",
+            "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します"
+        },
+        {
+            "label": "openapi runOpenApiGenerator(stacktrace)",
+            "type": "shell",
+            "command": "cd app && ./gradlew runOpenApiGenerator --stacktrace",
+            "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します(直接CLIを実行)"
+        },
+        {
             "label": "openapi createTemplates",
             "type": "shell",
             "command": "java -jar /usr/local/bin/openapi-generator-cli.jar author template -g kotlin-spring -o /app/app/src/main/resources/templates",
             "detail": "OpenAPIのデフォルトのMustacheテンプレートを作成します"
         },
         {
-            "label": "openapi createTemplates",
+            "label": "openapi extractControllerTemplate",
             "type": "shell",
-            "command": "cd app && ./gradlew createTemplates --stacktrace",
+            "command": "cd app && ./gradlew extractControllerTemplate --stacktrace",
             "detail": "OpenAPIのデフォルトのMustacheテンプレートを作成します"
+        },
+        {
+            "label": "openapi cleanGeneratedTemplates",
+            "type": "shell",
+            "command": "cd app && ./gradlew cleanGeneratedTemplates --stacktrace",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを削除します"
         },
         {
             "label": "openapi deleteTemplates",
