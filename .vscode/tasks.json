@@ -10,6 +10,12 @@
             "detail": "プロジェクトをビルドします"
         },
         {
+            "label": "gradle build --refresh-dependencies",
+            "type": "shell",
+            "command": "cd app && ./gradlew build --refresh-dependencies",
+            "detail": "キャッシュを無視し、すべての依存関係をリフレッシュして再ダウンロードする"
+        },
+        {
             "label": "gradle clean",
             "type": "shell",
             "command": "cd app && ./gradlew clean",
@@ -34,6 +40,12 @@
             "detail": "プロジェクトをビルドし、詳細なログを出力します"
         },
         {
+            "label": "gradle build --stacktrace",
+            "type": "shell",
+            "command": "cd app && ./gradlew build --stacktrace",
+            "detail": "プロジェクトをビルドし、詳細なログを出力します"
+        },
+        {
             "label": "gradle clean (refresh dependencies)",
             "type": "shell",
             "command": "cd app && ./gradlew clean --refresh-dependencies",
@@ -51,6 +63,30 @@
             "type": "shell",
             "command": "cd app && ./gradlew test --info",
             "detail": "テストを実行し、詳細なログを出力します"
+        },
+        {
+            "label": "gradle cleanBuildCache --stacktrace",
+            "type": "shell",
+            "command": "cd app && ./gradlew cleanBuildCache --stacktrace",
+            "detail": "Gradleのビルドキャッシュをクリアするコマンドです"
+        },
+        {
+            "label": "gradle dependencies",
+            "type": "shell",
+            "command": "cd app && ./gradlew dependencies",
+            "detail": "Gradleの依存関係の詳細を出力し、競合している依存関係を確認するコマンドです"
+        },
+        {
+            "label": "gradle dependencies > dependencies.txt",
+            "type": "shell",
+            "command": "cd app && ./gradlew dependencies > /app/app/logs/dependencies.txt",
+            "detail": "Gradleの依存関係の詳細を出力し、競合している依存関係を確認するコマンドです"
+        },
+        {
+            "label": "gradle dependencies --stacktrace",
+            "type": "shell",
+            "command": "cd app && ./gradlew dependencies --stacktrace",
+            "detail": "Gradleの依存関係の詳細を出力し、競合している依存関係を確認するコマンドです"
         },
         {
             "label": "openapi generate",
@@ -100,6 +136,5 @@
             "command": "rm -rf /app/app/src/main/resources/templates/*",
             "detail": "OpenAPIのデフォルトのMustacheテンプレートを削除します"
         }
-
     ]
 }
